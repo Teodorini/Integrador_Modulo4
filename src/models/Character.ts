@@ -3,7 +3,7 @@ export class Character {
     private _name: string;
     private _level: number;
     private _health: number;
-    private _experience: number;
+    private _experience: number;  
     private _inventory: string[];
 
  // Constructor que inicializa los atributos del personaje
