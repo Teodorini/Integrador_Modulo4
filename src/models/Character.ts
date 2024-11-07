@@ -14,6 +14,7 @@ export class Character {
         this._experience = experience
         this._inventory = inventory
     }
+    //Metodos de get 
     public get name(): string {
       return this._name
     }
@@ -33,6 +34,63 @@ export class Character {
     public get inventory(): string[] {
       return this._inventory;
     }
+
+    // Setter para el nombre del personaje
+
+    //Permite actualizar el nombre del personaje
+    public set name(name: string) {
+      if(name && name.trim().length > 0) {
+        this._name = name;
+      } else {
+        console.log("El Nombre no puede quedar vacio");
+        }
+    }
+
+    // Setter para el nivel del personaje
+    // Actualizar nivel confirmando que sea un mumero positivo
+    public set level(level: number) {
+      if(level > 0) {
+        this._level = level;
+      } else {
+        console.log("El nivel debe ser un número positivo.");
+        }
+   }
+
+   //Setter para la salud del  personaje
+   // Actualiza la salud asegurandose de que no sea negativa
+    public set health(health: number) {
+      if(health >= 0) {
+        this._health = health;
+      } else {
+        console.log("La salud no puede ser un numero negativo");
+        
+      }
+    }
+
+    // Setter para la experiencia del personaje
+    // Permite actualizar la experiencia, asegurándose de que no sea negativa.
+    public set experience(experience: number) {
+      if(experience >= 0) {
+        this._experience = experience;
+      } else {
+        console.log("La experiencia no puede ser un número negativo.");
+        
+      }
+    }
+
+
+    // Setter para el inventario
+    // Permite actualizar el inventario con un array de strings.
+    public set inventory(inventory: string[]) {
+      if(Array.isArray(inventory)) {
+        this._inventory = inventory;
+      } else {
+        console.log("El inventario debe ser de cadenas de texto");
+        
+      }
+    }
+
+
   // Metodo para añadir un item al inventario
   addItem(item: string): void {
     this._inventory.push(item);
